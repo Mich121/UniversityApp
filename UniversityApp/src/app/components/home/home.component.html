@@ -1,0 +1,28 @@
+<div id="main" *ngIf="!registrationService.registerAccount && !loginService.loginAccount" style="width: 100%;">
+    <button *ngIf="isLogged()" id="updateAccount" type="button" class="btn btn-primary" (click)="onEditAccount()"
+        style="margin-left: 190px;">Update Account</button>
+    <br/><br/>
+    <div id="wrapper" class="container-fluid">
+        <div id="first"><img src="../../../assets/img/uczelnia.jpg" id="universityImg"></div>
+        <div id="second">
+            <div id="textContainer">
+                <strong style="font-size: 30px;">University Visualization Database</strong>
+                <br/><br/><hr class="solid" style="padding-bottom: 20px; border-top: 8px solid white; border-radius: 5px;"/>
+                <strong>Visualization data base, thanks that you <br/><br/>will save time in daily data analize
+                good and cheap solution that help you in daily work, <br/><br/>are you registered? if not, lets do it now...</strong>
+                <br/><br/>
+                <br/><br/>
+                <button id="register" type="button" class="btn btn-success" (click)="onCreateAccount()">Register</button>
+                <br/><br/>
+                <div id="login" *ngIf="!isLogged()">
+                    <button id="login" type="button" class="btn btn-warning" (click)="onLoginAccount()">Login</button>
+                </div>
+                <br/><br/>
+            </div>
+        </div>
+    </div>
+</div>
+<br/><br/>
+
+<app-registration *ngIf="!!registrationService.registerAccount"></app-registration> 
+<app-login *ngIf="!!loginService.loginAccount"></app-login> 

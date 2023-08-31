@@ -1,0 +1,12 @@
+<div id="menu">
+<p-tabMenu [model]="menuItems">
+    <ng-template pTemplate="item" let-item>
+        <p-button (click)="goTo(item.label)">{{item.label}}</p-button>
+    </ng-template>
+</p-tabMenu>
+<br/>
+<div id="logout" *ngIf="isLogged()">
+    <p-button id="logout" type="button" (click)="onLogout()">Logout</p-button>
+</div>
+</div>
+<router-outlet></router-outlet>

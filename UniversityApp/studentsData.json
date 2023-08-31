@@ -1,0 +1,15 @@
+{
+    "people":
+    [
+        {
+            "name":"John", 
+            "surname":"Over", 
+            "departmentId":31
+        },
+        {
+            "name":"Monika", 
+            "surname":"Karp", 
+            "departmentId":32
+        }
+    ]
+}

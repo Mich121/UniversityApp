@@ -1,0 +1,25 @@
+<form  (submit)="onSubmit()">
+
+    <div id="accountFormContent">
+      
+      <ng-container *ngIf="registrationService.editOrCreate == true; then create; else edit"></ng-container>
+      <ng-template #create>
+        <input id="email" type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="p-inputtext-md" placeholder="Email..." pInputText/>
+      </ng-template>
+      <ng-template #edit>
+        <input id="email" type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="p-inputtext-md" placeholder="Email..." pInputText disabled=""/>
+      </ng-template>
+
+      <br /><br />
+      <input id="password" type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="p-inputtext-md" placeholder="Password..." pInputText/>
+      <br /><br />
+      <input id="confirmPassword" type="password" [(ngModel)]="confirmPassword" [ngModelOptions]="{standalone: true}" class="p-inputtext-md" placeholder="Confirm password..." pInputText/>
+      <br /><br />
+      <br /><br />
+
+      <p-button class="button" type="submit">Submit</p-button>
+      <br /><br />
+      <p-button class="button" type="button" (click)="onCancelOperation()">Cancel</p-button>
+    </div>
+  
+  </form>

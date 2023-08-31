@@ -1,0 +1,24 @@
+<div id="lecturerTable" *ngIf="!lecturerService.editedLecturer">
+    <button type="button" class="btn btn-primary" (click)="onCreateLecturer()">Create Lecturer</button>
+    <br /><br />
+    <p-table [value]="lecturers">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-lecturer>
+            <tr>
+                <td>{{ lecturer.id }}</td>
+                <td>{{ lecturer.name }}</td>
+                <td>{{ lecturer.surname }}</td>
+                <td><button type="button" class="btn btn-primary" (click)="onDeleteLecturer(lecturer.id)">Delete</button></td>
+                <td><button type="button" class="btn btn-primary" (click)="onUpdateLecturer(lecturer)">Update</button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<app-lecturer *ngIf="!!lecturerService.editedLecturer"></app-lecturer> 

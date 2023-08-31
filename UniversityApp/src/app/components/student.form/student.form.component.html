@@ -1,0 +1,16 @@
+<form  (submit)="onSubmit()">
+
+  <div id="studentFormContent">
+    <input id="name" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type="text" class="p-inputtext-md" placeholder="Name..." pInputText/>
+    <br /><br />
+    <input id="surname" type="text" [(ngModel)]="surname" [ngModelOptions]="{standalone: true}" class="p-inputtext-md" placeholder="Surname..." pInputText/>
+    <br /><br />
+    <p-dropdown [options]="departments"  [(ngModel)]="department" optionLabel="name" [ngModelOptions]="{standalone: true}"></p-dropdown>
+    <br /><br />
+
+    <p-button class="button" type="submit">Submit</p-button>
+    <br /><br />
+    <p-button class="button" type="button" (click)="onCancelOperation()">Cancel</p-button>
+  </div>
+
+</form>

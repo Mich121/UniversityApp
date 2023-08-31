@@ -1,0 +1,37 @@
+#main {
+    margin-right: auto; margin-left: auto; width: 100%; padding-top: 20px;
+}
+
+#buttonsContainer {
+    margin-right: auto; margin-left: auto; padding-top: 20px; padding-bottom: 70px;
+}
+
+#login {
+    padding-right: 50px;
+}
+
+#register {
+    padding-left: 50px;
+}
+
+#wrapper {
+    float: left;
+}
+
+#first {
+    float:left;
+    width: 50%;
+}
+
+#second {
+    float: left;
+    padding-left: 50px;
+    padding-top: 20px;
+    background-color: #0197F6;
+    color: white;
+    width: 50%;
+}
+
+#textContainer {
+    margin-right: auto; margin-left: auto; width: 100%; padding-top: 20px; text-align: center;
+}

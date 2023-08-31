@@ -1,0 +1,11 @@
+<form [formGroup]="departmentForm" (submit)="onSubmit()">
+
+    <div id="departmentFormContent">
+      <input id="name" formControlName="name" type="text" class="p-inputtext-md" placeholder="Name..." pInputText/>
+      <br /><br />
+      <p-button class="button" type="submit">Submit</p-button>
+      <br /><br />
+      <p-button class="button" type="button" (click)="onCancelOperation()">Cancel</p-button>
+    </div>
+  
+  </form>

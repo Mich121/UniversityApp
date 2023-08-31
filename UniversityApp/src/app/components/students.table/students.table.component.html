@@ -1,0 +1,34 @@
+<div id="studentTable" *ngIf="!studentService.editedStudent">
+    <button type="button" class="btn btn-primary" (click)="onFakeCreateStudent()">Create Fake Student</button>
+    <br/><br/>
+    <button type="button" class="btn btn-primary" (click)="onCreateStudent()">Create Student</button>
+    <br /><br />
+    <p-fileUpload mode="basic" [customUpload]="true" chooseLabel="Create students using .json" name="demo[]"
+    accept=".json" (uploadHandler)="uploadFile($any($event.files))"></p-fileUpload>
+    <br /><br />
+    <span class="p-input-icon-left"><i class="pi pi-search"></i><input id="searchStudents" type="text" pInputText [(ngModel)]="searchedStudents"
+        (click)="onSearchedStudents()" placeholder="Search..."/></span>
+    <br /><br />
+    <p-table [value]="students">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Department Id</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-student>
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.surname }}</td>
+                <td>{{ student.departmentId }}</td>
+                <td><p-button class="btn-delete" (click)="onDeleteStudent(student.id)">Delete</p-button></td>
+                <td><p-button class="btn-update" (click)="onUpdateStudent(student)">Update</p-button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<app-student *ngIf="!!studentService.editedStudent"></app-student> 
